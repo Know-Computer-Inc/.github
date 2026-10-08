@@ -1,0 +1,36 @@
+name: Documentation issue
+description: Report missing, wrong, or unclear documentation.
+title: "[Docs]: "
+body:
+  - type: textarea
+    id: page
+    attributes:
+      label: Affected page
+      description: The document, file path, or section. Include the commit or date if you can, so the report does not go stale.
+      placeholder: "docs/development.md — \"Running the tests\" section"
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What is wrong, missing, or hard to follow? Say how it cost you time if it did.
+      placeholder: "The command in step 3 fails with <error>; the prerequisite is never mentioned."
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: Suggested correction
+      description: The text you would put there instead, or a description of what should be added.
+    validations:
+      required: false
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Before submitting
+      options:
+        - label: I checked that the documentation does not describe this elsewhere.
+          required: true
+        - label: This report contains no secrets, credentials, or private data.
+          required: true

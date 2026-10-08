@@ -1,0 +1,79 @@
+name: Bug report
+description: Report something that does not work the way it is documented to work.
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report.
+
+        **Security issues do not belong here.** Do not use this form to report a
+        vulnerability, a way to bypass authorization, or exposed credentials.
+        Follow the repository's `SECURITY.md` and report privately.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: A clear description of the problem, including the exact component, command, or page it affects.
+      placeholder: "Running <command> on <file> produces <result> instead of <expected>."
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps
+      description: The exact sequence of steps someone else can follow to see the problem.
+      placeholder: |
+        1. Clone the repository and check out <commit>
+        2. Run <command>
+        3. Observe <result>
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What you expected to happen, and where that expectation is documented, if it is.
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: What happened instead, including error messages verbatim.
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Operating system and version, runtime and version (for example Python 3.12.4, Node 22), relevant tool versions, repository commit.
+      placeholder: "Windows 11 23H2 / Python 3.12.4 / commit abc1234"
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs, output, or screenshots
+      description: Paste relevant output. Redact tokens, keys, passwords, file contents you do not have rights to share, and personal data.
+      render: shell
+    validations:
+      required: false
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched existing issues and did not find a duplicate.
+          required: true
+        - label: This report contains no secrets, credentials, private keys, or personal data.
+          required: true
+        - label: I reproduced this on the current default branch of the repository.
+          required: false
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: "Anything else that helps: workarounds, related issues, frequency, when it started."
+    validations:
+      required: false

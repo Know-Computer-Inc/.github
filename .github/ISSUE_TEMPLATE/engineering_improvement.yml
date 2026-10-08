@@ -1,0 +1,51 @@
+name: Engineering improvement
+description: Propose a change to tooling, CI, structure, performance, or maintainability — work with no direct user-facing feature.
+title: "[Engineering]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this for refactors, build and CI improvements, performance work,
+        dependency hygiene, developer experience, and observability. Use
+        **Feature proposal** when the change is user-visible behaviour.
+  - type: textarea
+    id: limitation
+    attributes:
+      label: Current limitation
+      description: "What is slow, fragile, confusing, or expensive today? Include evidence: timings, failure rates, error output, or a concrete scenario."
+      placeholder: "The build takes <n> minutes because <reason>, and fails with <error> when <condition>."
+    validations:
+      required: true
+  - type: textarea
+    id: change
+    attributes:
+      label: Proposed change
+      description: What you would do differently, and where in the repository it lands.
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: Technical impact
+      description: What this touches, what it makes harder or easier, migration or compatibility concerns, and new dependencies if any.
+    validations:
+      required: true
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation approach
+      description: How you would demonstrate the improvement, and how you would detect a regression later.
+      placeholder: |
+        - Measure: <metric> before and after, method: <command>
+        - Regression guard: <test, benchmark, or CI check>
+    validations:
+      required: true
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched existing issues and did not find a duplicate.
+          required: true
+        - label: This improvement can be described without revealing confidential architecture or business plans.
+          required: true

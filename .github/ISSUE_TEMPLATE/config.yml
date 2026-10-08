@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Report a security vulnerability
+    url: https://github.com/Know-Computer-Inc/.github/security/policy
+    about: Security issues are reported privately — never through a public issue or this form.

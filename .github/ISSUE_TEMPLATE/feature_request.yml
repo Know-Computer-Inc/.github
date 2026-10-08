@@ -1,0 +1,57 @@
+name: Feature proposal
+description: Propose a capability that does not exist yet, and make the case for it.
+title: "[Feature]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Proposals are judged on the problem they solve, not on the size of the
+        idea. Describe the user's situation before describing your solution.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What is difficult, impossible, or annoying today? Who experiences it, and how often?
+      placeholder: "Today, a user has to <manual step> every time <situation>, because <missing capability>."
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution
+      description: What you would like to exist. Be concrete about behaviour, not implementation detail, unless the implementation is the point.
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: User impact
+      description: Who benefits, what becomes possible, and how you would verify that it worked.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Workarounds you use today, or other designs you rejected and why.
+    validations:
+      required: false
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: The observable conditions under which this proposal is done. Keep them testable.
+      placeholder: |
+        - Given <state>, when <action>, then <observable result>
+        - Documentation updated with the new behaviour
+    validations:
+      required: true
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched existing issues and did not find a duplicate proposal.
+          required: true
+        - label: This proposal does not depend on unpublished internal systems or confidential information.
+          required: true
