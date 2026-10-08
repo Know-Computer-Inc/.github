@@ -4,10 +4,10 @@
 # repository. On 2026-10-08 the GitHub API reported @mattiaciuni as an
 # organization administrator with admin (push) rights here.
 #
-# A private "Engineering" team (slug `engineering`) exists as of 2026-10-08
-# with @mattiaciuni as its only member. Team slugs are deliberately left out
-# of this file: the default is a named human, not a group whose membership can
-# change without a review.
+# Three teams exist as of 2026-10-08: `engineering` (private, @mattiaciuni),
+# `contributors` (read), and `reviewers` (write). Team slugs are deliberately
+# left out of this file: the default is a named human, not a group whose
+# membership can change without a review.
 #
 # Review rules only apply if the repository's branch protection requires
 # CODEOWNERS review (Settings > Branches). See docs/SECURITY_BASELINE.md.
