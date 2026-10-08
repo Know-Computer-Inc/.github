@@ -23,20 +23,21 @@ administrator. This is a point-in-time audit, not continuous monitoring.
 | Control | Observed state |
 |---|---|
 | Repositories | 7, all **private**; 0 public |
-| Organization teams | **None exist.** CODEOWNERS cannot reference teams yet. |
+| Organization teams | **One private team as of 2026-10-08:** `Engineering` (`engineering` slug, @mattiaciuni as maintainer). CODEOWNERS still uses a named human. |
 | Branch protection on default branches | **Not enabled** on any sampled repository (all report `protected: false`) |
-| Branch protection on `.github` | **Not applicable at audit time** (the repository had no branches yet) |
+| Branch protection on `.github` | **Enabled 2026-10-08** on `main`: required status check `Repository validation`, no force-push, no deletions, administrators included |
 | Required pull request reviews | Not observed as enforced anywhere |
-| Secret scanning / push protection | Not reported as enabled by the API for these repositories |
-| Dependabot alerts | Not reported as enabled by the API for these repositories |
-| Private vulnerability reporting | Not verified as enabled; the security-advisory endpoint returned 404 |
+| Secret scanning / push protection | **Enabled on `.github`** (public). Private repositories returned 422: plan-limited (requires GitHub Advanced Security) |
+| Dependabot alerts | **Enabled on all 7 repositories** (2026-10-08) |
+| Private vulnerability reporting | Not enabled; the endpoint returned 404 on this plan |
 | CODEOWNERS | Present in one public-facing repository (`@mattiaciuni`); absent from `.github` at audit time |
 | CI | Present in four repositories, each with `permissions: contents: read` |
 | Dependabot updates | Configured in one repository (npm + github-actions, weekly, no auto-merge) |
 
-Some features (secret scanning, push protection, Dependabot alerts on private
-repositories) are plan-limited on GitHub and may not be available until the
-organization's plan changes. That is a business decision, not an oversight.
+Some features (secret scanning and push protection on private repositories,
+private vulnerability reporting) are plan-limited on GitHub and may not be
+available until the organization's plan changes. That is a business decision,
+not an oversight.
 
 ## Recommended policy
 
