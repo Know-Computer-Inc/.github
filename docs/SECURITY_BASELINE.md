@@ -23,7 +23,7 @@ administrator. This is a point-in-time audit, not continuous monitoring.
 | Control | Observed state |
 |---|---|
 | Repositories | 7, all **private**; 0 public |
-| Organization teams | **One private team as of 2026-10-08:** `Engineering` (`engineering` slug, @mattiaciuni as maintainer). CODEOWNERS still uses a named human. |
+| Organization teams | **Three teams as of 2026-10-08:** `Engineering` (private, @mattiaciuni as maintainer), `Contributors` (visible, read baseline), `Reviewers` (visible, write baseline). CODEOWNERS still uses a named human. |
 | Branch protection on default branches | **Not enabled** on any sampled repository (all report `protected: false`) |
 | Branch protection on `.github` | **Enabled 2026-10-08** on `main`: required status check `Repository validation`, no force-push, no deletions, administrators included |
 | Required pull request reviews | Not observed as enforced anywhere |
