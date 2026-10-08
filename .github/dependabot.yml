@@ -1,0 +1,28 @@
+# Dependabot for the .github repository.
+#
+# This repository contains Markdown, YAML, and GitHub Actions only — there is
+# no application manifest, so only the github-actions ecosystem applies.
+# Configurations for npm, pip, cargo, or anything else belong in the
+# repositories that actually contain those manifests
+# (see docs/REPOSITORY_STANDARDS.md).
+#
+# Every action used here is pinned to a full commit SHA with the version in a
+# trailing comment; Dependabot keeps those pins current. No auto-merge: every
+# update still passes CI and human review.
+
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      timezone: UTC
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: chore(ci)
+      include: scope
+    groups:
+      actions:
+        patterns:
+          - "*"

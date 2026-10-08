@@ -1,0 +1,5 @@
+{
+  "name": "Python CI",
+  "description": "Ruff lint and format, pytest (unittest fallback), type check when configured, and build validation for Python repositories.",
+  "categories": ["Continuous integration"]
+}

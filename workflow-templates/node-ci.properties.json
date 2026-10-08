@@ -1,0 +1,5 @@
+{
+  "name": "Node CI",
+  "description": "npm install from the lockfile, typecheck, lint, format check, tests, and production build for Node.js and TypeScript repositories.",
+  "categories": ["Continuous integration"]
+}

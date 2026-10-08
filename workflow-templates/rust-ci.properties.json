@@ -1,0 +1,5 @@
+{
+  "name": "Rust CI",
+  "description": "cargo fmt, clippy with warnings as errors, tests, and build validation for Rust repositories.",
+  "categories": ["Continuous integration"]
+}

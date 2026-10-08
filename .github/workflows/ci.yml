@@ -1,0 +1,41 @@
+# Static validation for this repository: Markdown, YAML, issue forms,
+# workflow pinning and permissions, and credential-shaped strings.
+#
+# This is NOT evidence that organization security controls are enabled —
+# see docs/SECURITY_BASELINE.md for the difference between policy and
+# verified configuration.
+
+name: Validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Repository validation
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.12'
+
+      - name: Install validator dependencies
+        run: python -m pip install --disable-pip-version-check pyyaml==6.0.3
+
+      - name: Validate repository
+        run: python scripts/validate_repo.py

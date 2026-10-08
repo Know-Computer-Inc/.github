@@ -1,0 +1,5 @@
+{
+  "name": "Dependency Audit",
+  "description": "npm audit, pip-audit, and cargo audit for whichever manifests the repository actually contains, plus a scheduled weekly run.",
+  "categories": ["Security"]
+}

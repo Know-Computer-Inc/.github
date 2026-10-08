@@ -1,0 +1,67 @@
+# Starter workflow: Rust repository.
+#
+# Assumptions (edit them if they are wrong for your repository):
+#   - a Cargo.toml at the repository root;
+#   - stable toolchain with rustfmt and clippy;
+#   - clippy warnings are errors (`-D warnings`) — drop that if the codebase is
+#     not yet clean, but do not pretend the check passes.
+#
+# Uses the toolchain preinstalled on GitHub-hosted runners via rustup, so no
+# third-party actions are required.
+
+name: Rust CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rust-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Format, lint, test, build
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Install stable toolchain
+        run: |
+          if [ ! -f Cargo.toml ]; then
+            echo "No Cargo.toml at the repository root. Edit this template."
+            exit 1
+          fi
+          rustup toolchain install stable --profile minimal --no-self-update
+          rustup default stable
+          rustup component add rustfmt clippy
+
+      - name: Format check
+        run: cargo fmt --all -- --check
+
+      - name: Clippy
+        run: cargo clippy --all-targets --all-features -- -D warnings
+
+      - name: Test
+        run: |
+          if [ -f Cargo.lock ]; then
+            cargo test --locked --all-targets
+          else
+            cargo test --all-targets
+          fi
+
+      - name: Build validation
+        run: |
+          if [ -f Cargo.lock ]; then
+            cargo build --locked
+          else
+            cargo build
+          fi
