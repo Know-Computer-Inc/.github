@@ -2,7 +2,7 @@
 
 Who decides what at Know, and how little process that actually requires.
 
-Know is a pre-seed company. The point of this document is not bureaucracy — it
+Know is a pre-seed company. The point of this document is not bureaucracy; it
 is to make sure that the decisions which are hard to undo are made deliberately,
 by a person who understood they were making them, and are recorded somewhere
 they can be found later.
@@ -18,10 +18,10 @@ observed. Nothing in this file grants permissions.
 |---|---|
 | **Repository maintainer** | Owns a repository's direction, merges pull requests, keeps its README, tests, and CI honest. |
 | **Code reviewer** | Evaluates correctness, clarity, tests, and scope. Responsible for what they approve. |
-| **Security reviewer** | Reviews changes touching authorization, secrets, data access, agent boundaries, and workflows. A role, not necessarily a separate person — at current team size the same human may hold both. |
+| **Security reviewer** | Reviews changes touching authorization, secrets, data access, agent boundaries, and workflows. A role, not necessarily a separate person; at current team size the same human may hold both. |
 | **Organization administrator** | Manages members, teams, repository settings, and security features. The only role that changes organization configuration. |
 | **Release owner** | Authorizes publication: releases, tags, public visibility changes, production deployments. |
-| **AI automation identity** | May open pull requests and push branches when authorized. Holds no approval, merge, deployment, or configuration authority — by construction, not by agreement. |
+| **AI automation identity** | May open pull requests and push branches when authorized. Holds no approval, merge, deployment, or configuration authority, by construction, not by agreement. |
 
 One person may hold several roles. The roles must still be *named*, so it is
 clear who to ask and who was accountable when something goes wrong.
@@ -32,7 +32,7 @@ clear who to ask and who was accountable when something goes wrong.
 |---|---|
 | Merging to a protected default branch | One code reviewer with write access (two for security-sensitive paths) |
 | Making a repository public | Organization administrator + release owner, after the publication checklist |
-| Changing `SECURITY.md`, `CODE_OF_CONDUCT.md`, this document, or `AI_ENGINEERING_POLICY.md` | Organization administrator, with explicit human review — never by an agent acting alone |
+| Changing `SECURITY.md`, `CODE_OF_CONDUCT.md`, this document, or `AI_ENGINEERING_POLICY.md` | Organization administrator, with explicit human review, never by an agent acting alone |
 | Changing branch protection, repository settings, or organization settings | Organization administrator |
 | Granting, changing, or revoking repository access | Organization administrator |
 | Adding or changing a secret or credential | Named owner of that credential, recorded where the team can see that it exists |
@@ -46,7 +46,7 @@ clear who to ask and who was accountable when something goes wrong.
 ## Principles that keep this light
 
 - **Approvals are for irreversible or broad-blast-radius decisions.** If a
-  mistake is cheap to revert, do not gate it — revert it.
+  mistake is cheap to revert, do not gate it, revert it.
 - **The person doing the work does not approve their own high-risk change**
   when another person is available. When no other person is available, the
   exception is written into the pull request instead of being hidden.
@@ -56,7 +56,7 @@ clear who to ask and who was accountable when something goes wrong.
 - **Say no out loud.** A declined request gets a reason in writing; a silently
   ignored request is a process failure.
 - **Revisit when it hurts.** If a rule costs more than the risk it controls,
-  change the rule deliberately — do not erode it quietly.
+  change the rule deliberately, do not erode it quietly.
 
 ## Escalation
 
@@ -78,7 +78,7 @@ clear who to ask and who was accountable when something goes wrong.
 - Reviewers are responsible for what they approve. Rubber-stamping a
    security-sensitive change transfers the responsibility, not the risk.
 - CODEOWNERS files list real accounts only. If a team does not exist on
-  GitHub, its name does not appear in CODEOWNERS — see
+  GitHub, its name does not appear in CODEOWNERS; see
   [SECURITY_BASELINE.md](SECURITY_BASELINE.md) §2.
 
 ## Records

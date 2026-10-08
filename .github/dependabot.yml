@@ -1,6 +1,6 @@
 # Dependabot for the .github repository.
 #
-# This repository contains Markdown, YAML, and GitHub Actions only — there is
+# This repository contains Markdown, YAML, and GitHub Actions only; there is
 # no application manifest, so only the github-actions ecosystem applies.
 # Configurations for npm, pip, cargo, or anything else belong in the
 # repositories that actually contain those manifests

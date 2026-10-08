@@ -5,7 +5,7 @@ organization profile, default community health files, issue and pull request
 templates, workflow templates, and the engineering standards that apply across
 Know repositories.
 
-Everything here is policy, templates, and identity — no application code.
+Everything here is policy, templates, and identity, no application code.
 
 ## What GitHub uses from this repository
 
@@ -52,7 +52,6 @@ Everything here is policy, templates, and identity — no application code.
 │   ├── AI_ENGINEERING_POLICY.md
 │   ├── GOVERNANCE.md
 │   ├── adr/                      # Architecture decision records: README + TEMPLATE
-│   └── internal/                 # INTERNAL — exclude before publication
 ├── scripts/
 │   └── validate_repo.py
 ├── CODE_OF_CONDUCT.md
@@ -84,25 +83,23 @@ verified configuration, see [docs/SECURITY_BASELINE.md](docs/SECURITY_BASELINE.m
 
 ## Standards in this repository
 
-- [Engineering principles](docs/ENGINEERING_PRINCIPLES.md) — how Know makes technical decisions.
-- [Repository standards](docs/REPOSITORY_STANDARDS.md) — READMEs, commands, tests, CI, dependencies.
-- [Security baseline](docs/SECURITY_BASELINE.md) — controls expected of Know repositories, plus what is actually configured today.
-- [AI engineering policy](docs/AI_ENGINEERING_POLICY.md) — what AI agents may and may not do in Know repositories.
-- [Governance](docs/GOVERNANCE.md) — who approves what, and how little process that requires.
-- [ADR process](docs/adr/README.md) — recording decisions worth keeping.
+- [Engineering principles](docs/ENGINEERING_PRINCIPLES.md): how Know makes technical decisions.
+- [Repository standards](docs/REPOSITORY_STANDARDS.md): READMEs, commands, tests, CI, dependencies.
+- [Security baseline](docs/SECURITY_BASELINE.md): controls expected of Know repositories, plus what is actually configured today.
+- [AI engineering policy](docs/AI_ENGINEERING_POLICY.md): what AI agents may and may not do in Know repositories.
+- [Governance](docs/GOVERNANCE.md): who approves what, and how little process that requires.
+- [ADR process](docs/adr/README.md): recording decisions worth keeping.
 
 ## Status of this repository
 
 - The organization profile in `profile/README.md` is written to be publishable
   as-is, but **this repository is private**, and the organization profile will
   not render until GitHub's public `.github` repository requirement is met.
-- `docs/internal/` contains an internal repository inventory and must be removed
-  or relocated before publication.
-- Files marked `PUBLICATION BLOCKER` need a verified reporting contact resolved
-  before this repository becomes public.
+- Security and conduct reports reach m@know.computer (Mattia Ciuni, CEO at
+  Know Computer); private vulnerability reporting is preferred where enabled.
 
 Changing visibility, branch protection, organization settings, or permissions
-requires explicit human approval — see [docs/GOVERNANCE.md](docs/GOVERNANCE.md).
+requires explicit human approval, see [docs/GOVERNANCE.md](docs/GOVERNANCE.md).
 
 ## License
 

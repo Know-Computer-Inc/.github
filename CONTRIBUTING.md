@@ -29,7 +29,7 @@ different merge strategy, follow the repository.
 ## Reporting bugs
 
 Use the **Bug report** issue form in the affected repository. The form asks for
-reproduction steps, expected and actual behaviour, and environment details — a
+reproduction steps, expected and actual behaviour, and environment details; a
 bug we cannot reproduce is a bug we cannot fix.
 
 - Reproduce it on the current default branch before reporting.
@@ -57,8 +57,8 @@ state, in its first paragraph, what the change does and why it is needed.
   a behaviour change.
 - **Evidence, not assertion.** Say which commands you ran and what they
   printed. "Tested locally" without the command means nothing.
-- **Tests that fail before your change and pass after it** — for bug fixes —
-  or tests that cover new behaviour — for features.
+- **Tests that fail before your change and pass after it** (for bug fixes)
+  or tests that cover new behaviour (for features).
 - **No drive-by reformatting.** Whitespace and style changes belong in their
   own commit or pull request.
 - **Documentation updated with the code.** If a change alters setup steps,
@@ -112,7 +112,7 @@ changes.
 ## Review
 
 - A pull request is ready for review when it is complete, tested, and the
-  description is written — not when the author wants feedback.
+  description is written, not when the author wants feedback.
 - Reviewers evaluate correctness, clarity, tests, security impact, and scope.
   Expect pushback on all five.
 - Review is a discussion, not a verdict negotiation: either side can propose a

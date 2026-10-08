@@ -27,7 +27,7 @@ $ <command>
 
 <!-- New dependencies, new data access, new permissions, new external calls,
      new secrets, changes to authorization or agent boundaries. "None" is a
-     valid answer — write it. -->
+     valid answer, write it. -->
 
 ## Risks and rollback
 

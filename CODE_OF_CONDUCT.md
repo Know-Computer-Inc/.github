@@ -41,15 +41,10 @@ Report an incident by one of these routes:
 
 1. GitHub's report form for abuse involving a GitHub account:
    <https://github.com/contact/report-abuse>
-2. Contact a Know organization administrator directly through GitHub. Profile
+2. Email **m@know.computer** (Mattia Ciuni, CEO at Know Computer) directly and
+   privately.
+3. Contact a Know organization administrator directly through GitHub. Profile
    and organization pages list the people with administrator access.
-
-<!--
-  PUBLICATION BLOCKER (must be resolved before this repository is made public):
-  a dedicated, monitored conduct contact address has not been verified.
-  Add it here as a third reporting route and remove this comment.
-  Do not publish an invented address.
--->
 
 Include: what happened, when and where it happened (link, repository, thread),
 who was involved, and any supporting evidence. Preserve screenshots or messages
@@ -74,8 +69,8 @@ the decision.
 
 ## Scope
 
-This Code of Conduct applies in all Know Computer project spaces — repositories,
-issues, pull requests, discussions, and related communication channels — and
+This Code of Conduct applies in all Know Computer project spaces (repositories,
+issues, pull requests, discussions, and related communication channels) and
 whenever someone is representing Know Computer in public.
 
 It does not replace employment, contractor, or legal agreements; where those set

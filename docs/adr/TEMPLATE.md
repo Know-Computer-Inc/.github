@@ -19,12 +19,12 @@ internal system.
 ## Decision
 
 The choice we made, stated in the active voice, in one or two sentences.
-"We will…" or "We choose…". Ambiguity here becomes a dispute later.
+"We will..." or "We choose...". Ambiguity here becomes a dispute later.
 
 ## Alternatives considered
 
 Each option seriously evaluated, with why it lost. Include the option of doing
-nothing — it was on the table, even if nobody wanted it.
+nothing (it was on the table, even if nobody wanted it).
 
 | Option | Why not |
 |---|---|

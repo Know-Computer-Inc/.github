@@ -5,7 +5,7 @@
 #   - scripts named typecheck / lint / format:check / test / build;
 #   - Node 22 (add another matrix entry if you support a second major).
 #
-# The test step fails when no test script exists — a green check without tests
+# The test step fails when no test script exists, a green check without tests
 # is worse than a red one. Build stays optional: a library does not need one.
 
 name: Node CI
@@ -47,7 +47,7 @@ jobs:
           if [ -f package-lock.json ]; then
             npm ci --no-audit --no-fund
           else
-            echo "No package-lock.json — committing one is recommended for reproducible installs."
+            echo "No package-lock.json; committing one is recommended for reproducible installs."
             npm install --no-audit --no-fund
           fi
 

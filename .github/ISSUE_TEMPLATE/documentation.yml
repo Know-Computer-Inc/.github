@@ -7,7 +7,7 @@ body:
     attributes:
       label: Affected page
       description: The document, file path, or section. Include the commit or date if you can, so the report does not go stale.
-      placeholder: "docs/development.md — \"Running the tests\" section"
+      placeholder: "docs/development.md, \"Running the tests\" section"
     validations:
       required: true
   - type: textarea

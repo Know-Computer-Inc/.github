@@ -29,7 +29,7 @@ request description; a thin ADR is worse than none.
 
 | ADR | Title | Status |
 |---|---|---|
-| — | No decisions recorded yet. | — |
+| None | No decisions recorded yet. | None |
 
 Add a row here when you add a decision. This repository deliberately ships no
 fabricated history: the first ADR is the first real decision.

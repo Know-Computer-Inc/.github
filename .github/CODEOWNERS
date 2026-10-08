@@ -1,11 +1,11 @@
-# Know Computer, Inc. — .github repository code owners
+# Know Computer, Inc. .github repository code owners
 #
 # Every line below names a real GitHub account with verified access to this
 # repository. On 2026-10-08 the GitHub API reported @mattiaciuni as an
 # organization administrator with admin (push) rights here.
 #
 # No organization teams exist yet. Do not add team slugs to this file until the
-# teams exist on GitHub — CODEOWNERS entries that GitHub cannot resolve are
+# teams exist on GitHub: CODEOWNERS entries that GitHub cannot resolve are
 # silently ineffective, which is worse than having no rule at all.
 #
 # Review rules only apply if the repository's branch protection requires
@@ -18,10 +18,10 @@
 # Default: everything in this repository is owned by a named human.
 * @mattiaciuni
 
-# Public identity — reviewed as brand and as public claims.
+# Public identity: reviewed as brand and as public claims.
 /profile/ @mattiaciuni
 
-# Policy files — changing these changes what the organization promises.
+# Policy files: changing these changes what the organization promises.
 /SECURITY.md @mattiaciuni
 /CODE_OF_CONDUCT.md @mattiaciuni
 /CONTRIBUTING.md @mattiaciuni
@@ -30,7 +30,7 @@
 /docs/GOVERNANCE.md @mattiaciuni
 /docs/SECURITY_BASELINE.md @mattiaciuni
 
-# Automation — workflow changes can exfiltrate secrets.
+# Automation: workflow changes can exfiltrate secrets.
 /.github/workflows/ @mattiaciuni
 /workflow-templates/ @mattiaciuni
 /.github/dependabot.yml @mattiaciuni

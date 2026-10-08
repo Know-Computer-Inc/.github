@@ -7,9 +7,9 @@ what is actually configured today.
 
 Two things are deliberately separated:
 
-- **Recommended policy** — what we intend every repository to have. Written
+- **Recommended policy:** what we intend every repository to have. Written
   here, agreed as intent, *not* proof that it is active.
-- **Verified configuration** — what was observed directly through the GitHub API
+- **Verified configuration:** what was observed directly through the GitHub API
   on the date stated. Everything here was checked, not assumed.
 
 **Nothing is protected because this document says it should be.** Controls only
@@ -24,15 +24,15 @@ administrator. This is a point-in-time audit, not continuous monitoring.
 |---|---|
 | Repositories | 7, all **private**; 0 public |
 | Organization teams | **None exist.** CODEOWNERS cannot reference teams yet. |
-| Branch protection on default branches | **Not enabled** on the sampled repositories (`Know`, `Know-Website`, `Know-Teams-Agents`, `Know-Team-MCP` all report `protected: false`) |
-| Branch protection on `.github` | **Not applicable at audit time** — the repository had no branches yet |
+| Branch protection on default branches | **Not enabled** on any sampled repository (all report `protected: false`) |
+| Branch protection on `.github` | **Not applicable at audit time** (the repository had no branches yet) |
 | Required pull request reviews | Not observed as enforced anywhere |
 | Secret scanning / push protection | Not reported as enabled by the API for these repositories |
 | Dependabot alerts | Not reported as enabled by the API for these repositories |
 | Private vulnerability reporting | Not verified as enabled; the security-advisory endpoint returned 404 |
-| CODEOWNERS | Present in `Know-Website` (`@mattiaciuni`); absent from `.github` at audit time |
-| CI | Present in `Know-Website`, `Know-Team-MCP`, `Know-Teams-Agents`, `Know-Agent-Runtime`, each with `permissions: contents: read` |
-| Dependabot updates | Configured in `Know-Website` (npm + github-actions, weekly, no auto-merge) |
+| CODEOWNERS | Present in one public-facing repository (`@mattiaciuni`); absent from `.github` at audit time |
+| CI | Present in four repositories, each with `permissions: contents: read` |
+| Dependabot updates | Configured in one repository (npm + github-actions, weekly, no auto-merge) |
 
 Some features (secret scanning, push protection, Dependabot alerts on private
 repositories) are plan-limited on GitHub and may not be available until the
@@ -62,7 +62,7 @@ For the default branch of every repository that receives contributions:
 - Require all conversation threads to be resolved.
 - Require status checks to pass (the repository's own CI).
 - `CODEOWNERS` review required for security-sensitive paths.
-- Include administrators, so protection applies to everyone — including
+- Include administrators, so protection applies to everyone, including
   humans who would rather bypass it and agents that cannot.
 
 Small pre-seed trade-off: on a team of one or two people, one required review
@@ -72,7 +72,7 @@ protection for everyone.
 
 ### 3. Secrets and credentials
 
-- No secret, key, token, or `.env` file is ever committed — not even for a
+- No secret, key, token, or `.env` file is ever committed, not even for a
   test. Use obviously fake values in fixtures.
 - Credentials live in GitHub Actions secrets, environment secrets, or a
   password manager, and are scoped to one environment.
@@ -92,7 +92,7 @@ protection for everyone.
 - New dependencies require justification in the pull request: purpose,
   alternatives, maintenance status, license.
 - Known-vulnerability audits run in CI (`npm audit`, `pip-audit`,
-  `cargo audit` — whichever matches the stack).
+  `cargo audit`, whichever matches the stack).
 - Prefer minimal dependency surface: the standard library is the safest
   dependency.
 
@@ -104,7 +104,7 @@ protection for everyone.
 - Only actions from the `actions/` and `github/` orgs, or tools the team has
   deliberately evaluated, are used.
 - Pins are updated through Dependabot (`github-actions` ecosystem) or a
-  scheduled review — never by copying a tag from a blog post.
+  scheduled review, never by copying a tag from a blog post.
 - Workflow changes are reviewed like code: they can exfiltrate secrets.
 - Generated artifacts (bundles, images) are built by CI, not by hand, and are
   traceable to a commit.
@@ -132,13 +132,13 @@ protection for everyone.
 
 ### 8. Incident response
 
-1. **Contain** — revoke or rotate the affected credential, disable the affected
+1. **Contain.** Revoke or rotate the affected credential, disable the affected
    path, stop the automation if it is acting.
-2. **Assess** — what was accessed, by whom, when, and what else shares the
+2. **Assess.** What was accessed, by whom, when, and what else shares the
    compromised credential.
-3. **Report** — affected users and, where relevant, follow
+3. **Report.** Affected users and, where relevant, follow
    [SECURITY.md](../SECURITY.md) disclosure expectations.
-4. **Fix and learn** — patch the root cause, then write down what allowed it.
+4. **Fix and learn.** Patch the root cause, then write down what allowed it.
    The post-mortem has no blame and no exceptions.
 
 Incident records live in a private location; the *lessons* that can be shared
@@ -181,7 +181,7 @@ Before a private repository becomes public:
 
 1. Read every tracked file for internal architecture, credentials, customer or
    partner references, and business plans.
-2. Check the full Git history — `git log -p --all` — not just the current tree.
+2. Check the full Git history (`git log -p --all`), not just the current tree.
 3. Verify every external link in the repository resolves.
 4. Confirm security and conduct reporting routes actually reach a human.
 5. Confirm licenses and third-party attributions are correct.
@@ -190,7 +190,7 @@ Before a private repository becomes public:
 
 ## What requires explicit approval
 
-Enabling any control above that changes organization settings — branch
-protection, security features, visibility, member roles, workflow permissions —
+Enabling any control above that changes organization settings (branch
+protection, security features, visibility, member roles, workflow permissions)
 requires explicit human approval. See [GOVERNANCE.md](GOVERNANCE.md) for who
 approves what. This document recommends; it does not authorize.

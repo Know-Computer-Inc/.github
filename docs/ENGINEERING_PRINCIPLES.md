@@ -9,7 +9,7 @@ opposite failure is easy to imagine in our own systems.
 A system is only as reliable as what has been demonstrated for it. Say which
 command you ran, what it printed, and on which commit. A green check is worth
 more than a strong opinion; an honest "not tested yet" is worth more than a
-claim. Confidence without evidence is noise, no matter who is speaking —
+claim. Confidence without evidence is noise, no matter who is speaking,
 including us, including our models.
 
 ## 2. Simplicity is a feature
@@ -17,7 +17,7 @@ including us, including our models.
 Every layer, dependency, service, and abstraction is a liability that accrues
 interest in maintenance, debugging, and security review. Complexity must earn
 its place by removing more friction than it creates. When two designs solve the
-problem, prefer the one with fewer moving parts — and prefer deleting the
+problem, prefer the one with fewer moving parts, and prefer deleting the
 problem altogether to building something clever around it.
 
 ## 3. Security is architecture
@@ -32,8 +32,8 @@ design is not finished.
 
 Autonomy is not permission. What an automated system may do is written down,
 scoped to a task, limited in time, and revocable by a person. Silence is never
-consent, absence of a rule is never a grant, and no component — human or
-machine — gets to expand its own authority. Anything that can act must be
+consent, absence of a rule is never a grant, and no component (human or
+machine) gets to expand its own authority. Anything that can act must be
 auditable after the fact.
 
 ## 5. Reliability before scale
@@ -53,7 +53,7 @@ design smell, not an organizational boundary.
 ## 7. Make the computer more useful
 
 Engineering is not an end in itself. The work exists to extend what a person
-can understand, retrieve, decide, and do — with less friction than they have
+can understand, retrieve, decide, and do, with less friction than they have
 today. If a system requires people to manage more software, more configuration,
 and more explanations, the engineering has failed regardless of how elegant it
 is underneath.
@@ -63,7 +63,7 @@ is underneath.
 Choose the boring thing that still works in three years over the clever thing
 that demos well this week. Maintainability is a feature users never see and
 always feel. Optimize for the person who will read this code cold, in a hurry,
-with incomplete context — that person is usually us.
+with incomplete context: that person is usually us.
 
 ---
 

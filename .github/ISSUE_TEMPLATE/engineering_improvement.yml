@@ -1,5 +1,5 @@
 name: Engineering improvement
-description: Propose a change to tooling, CI, structure, performance, or maintainability — work with no direct user-facing feature.
+description: Propose a change to tooling, CI, structure, performance, or maintainability, with no direct user-facing feature.
 title: "[Engineering]: "
 body:
   - type: markdown

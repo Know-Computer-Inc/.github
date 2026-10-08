@@ -51,7 +51,7 @@ jobs:
           elif [ -f pyproject.toml ]; then
             python -m pip install -e .
           else
-            echo "No requirements.txt or pyproject.toml — running as a plain source tree."
+            echo "No requirements.txt or pyproject.toml; running as a plain source tree."
           fi
 
       - name: Install developer tools
@@ -71,7 +71,7 @@ jobs:
             python -m pip install --disable-pip-version-check pyright
             pyright
           else
-            echo "No pyright/mypy configuration found — skipping."
+            echo "No pyright/mypy configuration found; skipping."
           fi
 
       - name: Test
@@ -93,5 +93,5 @@ jobs:
             python -m pip install --disable-pip-version-check build
             python -m build
           else
-            echo "No build backend configured — compile check only."
+            echo "No build backend configured; compile check only."
           fi

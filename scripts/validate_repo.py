@@ -16,7 +16,7 @@ Checks, in order:
   7. no credential-shaped strings are committed.
 
 This is static validation. It does not prove that a workflow runs on GitHub,
-that a branch protection rule exists, or that a reported control is enabled —
+that a branch protection rule exists, or that a reported control is enabled,
 see docs/SECURITY_BASELINE.md for that distinction.
 
 Requires: Python 3.10+ and PyYAML.
@@ -129,7 +129,7 @@ def check_yaml(rep: Report) -> dict[Path, object]:
         try:
             parsed[path] = yaml.safe_load(path.read_text(encoding="utf-8"))
         except yaml.YAMLError as exc:
-            rep.error(f"{rel}: invalid YAML — {exc}")
+            rep.error(f"{rel}: invalid YAML: {exc}")
     return parsed
 
 
@@ -250,7 +250,7 @@ def check_workflows(parsed: dict[Path, object], rep: Report) -> None:
                 continue
             uses = job.get("uses")
             if isinstance(uses, str) and not (LOCAL_RE.match(uses) or PIN_RE.match(uses)):
-                rep.error(f"{rel}: job '{job_name}' calls reusable workflow '{uses}' — pin it to a full 40-character commit SHA or a local path")
+                rep.error(f"{rel}: job '{job_name}' calls reusable workflow '{uses}'; pin it to a full 40-character commit SHA or a local path")
             steps = job.get("steps")
             if not isinstance(steps, list):
                 continue
@@ -264,7 +264,7 @@ def check_workflows(parsed: dict[Path, object], rep: Report) -> None:
                     continue
                 if not PIN_RE.match(step_uses):
                     rep.error(
-                        f"{rel}: step {i} in job '{job_name}' uses '{step_uses}' — "
+                        f"{rel}: step {i} in job '{job_name}' uses '{step_uses}'; "
                         "pin third-party actions to a full 40-character commit SHA "
                         "(with the version in a trailing comment)"
                     )
@@ -277,9 +277,9 @@ def check_workflows(parsed: dict[Path, object], rep: Report) -> None:
             if LOCAL_RE.match(ref) or not PIN_RE.match(ref):
                 continue
             if not comment:
-                rep.warn(f"{rel}: '{ref}' — add a trailing '# vX.Y.Z' version comment")
+                rep.warn(f"{rel}: '{ref}'; add a trailing '# vX.Y.Z' version comment")
             elif not re.match(r"v?\d", comment):
-                rep.warn(f"{rel}: '{ref}' — version comment '{comment}' does not look like a version")
+                rep.warn(f"{rel}: '{ref}'; version comment '{comment}' does not look like a version")
 
 
 def check_properties_json(rep: Report) -> None:
@@ -288,7 +288,7 @@ def check_properties_json(rep: Report) -> None:
         try:
             data = json.loads(path.read_text(encoding="utf-8"))
         except json.JSONDecodeError as exc:
-            rep.error(f"{rel}: invalid JSON — {exc}")
+            rep.error(f"{rel}: invalid JSON: {exc}")
             continue
         if not isinstance(data, dict):
             rep.error(f"{rel}: must be a JSON object")
@@ -355,7 +355,7 @@ def check_publication_blockers(rep: Report) -> None:
         text = path.read_text(encoding="utf-8")
         blockers = text.count("PUBLICATION BLOCKER")
         if blockers:
-            rep.warn(f"{rel}: {blockers} publication blocker marker(s) — resolve before making the repository public")
+            rep.warn(f"{rel}: {blockers} publication blocker marker(s); resolve before making the repository public")
         if re.search(r"\[INSERT[^\]]*\]", text):
             rep.error(f"{rel}: unfilled [INSERT ...] placeholder")
 

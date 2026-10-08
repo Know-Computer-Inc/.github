@@ -3,7 +3,7 @@
 # Assumptions (edit them if they are wrong for your repository):
 #   - a Cargo.toml at the repository root;
 #   - stable toolchain with rustfmt and clippy;
-#   - clippy warnings are errors (`-D warnings`) — drop that if the codebase is
+#   - clippy warnings are errors (`-D warnings`); drop that if the codebase is
 #     not yet clean, but do not pretend the check passes.
 #
 # Uses the toolchain preinstalled on GitHub-hosted runners via rustup, so no

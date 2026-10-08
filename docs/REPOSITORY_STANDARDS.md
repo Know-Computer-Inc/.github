@@ -4,7 +4,7 @@ What a reader should be able to do in any Know repository within five minutes:
 understand what it is, run it, test it, and know where to report a problem.
 
 These are defaults, not a template to be applied mechanically. A Rust runtime, a
-Vite site, a Python service, and a research repository are genuinely different —
+Vite site, a Python service, and a research repository are genuinely different;
 standardize the parts that reduce confusion, and keep the differences that
 reflect the technology.
 
@@ -21,7 +21,7 @@ reflect the technology.
 
 Community files (`CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, issue templates) come
 from this organization's `.github` repository by default. A repository needs its
-own copy only when its process genuinely differs — in which case the local file
+own copy only when its process genuinely differs; in that case the local file
 wins, so keep the difference intentional.
 
 ## Recommended README structure
@@ -37,7 +37,7 @@ Stage and honesty: prototype / in development / maintained / archived.
 What works, what does not, what is not claimed.
 
 ## Requirements
-Runtimes and versions actually needed (Python 3.12+, Node 22, Rust stable…).
+Runtimes and versions actually needed (Python 3.12+, Node 22, Rust stable).
 
 ## Setup
 The exact commands, in order, that work from a clean clone.
@@ -77,14 +77,14 @@ Skip sections that do not apply rather than filling them with "N/A".
 
 ## Development commands
 
-Document the real commands the project uses — not aspirational ones:
+Document the real commands the project uses, not aspirational ones:
 
 - One command to install, one to run, one to test, one to build.
 - Prefer the tool the repository already uses (uv, npm, cargo, make) over a new
   wrapper script.
 - If a command takes minutes or needs network access, say that next to it.
 - Commands in the README must have been run by the person who wrote them.
-  A README command that fails on a clean clone is a bug — file it.
+  A README command that fails on a clean clone is a bug, file it.
 
 ### Environment configuration
 
@@ -101,7 +101,7 @@ Document the real commands the project uses — not aspirational ones:
   README says so and why.
 - Tests are deterministic. No network-dependent assertions, no reliance on
   wall-clock timing, no order dependence between tests.
-- Tests never touch real user data or production credentials — they build
+- Tests never touch real user data or production credentials, they build
   their own temporary state.
 - CI runs the test suite on every pull request. A repository whose tests only
   run on one machine has not got tests; it has got a ritual.
@@ -127,7 +127,7 @@ Document the real commands the project uses — not aspirational ones:
 
 ## Continuous integration
 
-Baseline for a new repository — pick the workflow template in
+Baseline for a new repository: pick the workflow template in
 [`workflow-templates/`](../workflow-templates/) that matches the stack:
 
 1. Checkout, pinned to a commit SHA.
@@ -146,7 +146,7 @@ production deployment, no automatic merging. See
 
 Dependabot is the default; do not add Renovate alongside it. Example for a
 TypeScript repository (adapt the ecosystems to what the repository actually
-contains — never ship a config for a manifest that does not exist):
+contains; never ship a config for a manifest that does not exist):
 
 ```yaml
 # .github/dependabot.yml
@@ -181,7 +181,7 @@ updates:
 
 - One pull request, one purpose.
 - Titles are searchable: what changed, not "update".
-- The pull request template is short on purpose — fill it in, do not write an
+- The pull request template is short on purpose; fill it in, do not write an
   essay in it.
 - Close stale branches. A branch older than a month with no pull request is
   either finished (merge or delete it) or abandoned (delete it).
@@ -190,14 +190,14 @@ updates:
 
 - Every repository that matters has a `CODEOWNERS` file with real, verifiable
   owners (see [GOVERNANCE.md](GOVERNANCE.md)).
-- Security-sensitive paths — `.github/`, `SECURITY.md`, workflow files,
-  permission and authorization code — always have a named human owner.
+- Security-sensitive paths (`.github/`, `SECURITY.md`, workflow files,
+  permission and authorization code) always have a named human owner.
 - Ownership files are reviewed when people change roles, not when something
   breaks.
 
 ## When to split a repository
 
-Split when the change cadence, the audience, or the blast radius differs — not
+Split when the change cadence, the audience, or the blast radius differs, not
 to make the folder tree look organized. A public documentation site and a
 private runtime do not belong together; a config file and the service that
 reads it do.

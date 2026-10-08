@@ -1,7 +1,7 @@
 # Static validation for this repository: Markdown, YAML, issue forms,
 # workflow pinning and permissions, and credential-shaped strings.
 #
-# This is NOT evidence that organization security controls are enabled —
+# This is NOT evidence that organization security controls are enabled,
 # see docs/SECURITY_BASELINE.md for the difference between policy and
 # verified configuration.
 

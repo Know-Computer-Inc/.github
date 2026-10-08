@@ -1,6 +1,6 @@
 # Security Policy
 
-A vulnerability in Know software is not just a bug — it can change what an
+A vulnerability in Know software is not just a bug, it can change what an
 autonomous system is allowed to read, write, or execute on someone's computer.
 We treat security reports accordingly.
 
@@ -23,24 +23,19 @@ Use, in order of preference:
 1. **GitHub private vulnerability reporting**, if it is enabled on the
    repository where you found the issue: *Security* → *Report a vulnerability*
    on that repository.
-2. Otherwise, contact a Know organization administrator directly through GitHub
-   and state that you are reporting a security vulnerability. Ask for a private
-   channel and wait for one before sharing details.
-
-<!--
-  PUBLICATION BLOCKER (must be resolved before this repository is made public):
-  private vulnerability reporting has not been verified as enabled for this
-  organization (see docs/SECURITY_BASELINE.md, checklist item 1). Either enable
-  it on the repositories that will be public, or publish a verified monitored
-  security address as a third route above. Do not publish an invented address.
--->
+2. **Email** <m@know.computer>, monitored by the organization administrator.
+   State that you are reporting a security vulnerability; we will reply to
+   arrange a private channel before you share details.
+3. Contact a Know organization administrator directly through GitHub and state
+   that you are reporting a security vulnerability. Ask for a private channel
+   and wait for one before sharing details.
 
 A useful report contains:
 
 - what you found and where (file, function, configuration key, endpoint);
 - a concrete reproduction: a failing test, a sequence of commands, or minimal
   proof-of-concept code;
-- the impact you believe it has — specifically, whether it lets a component read
+- the impact you believe it has, specifically whether it lets a component read
   or modify data or act beyond the authority it was granted;
 - whether you have already triggered it against any real system or data;
 - any suggested remediation, if you have one.
