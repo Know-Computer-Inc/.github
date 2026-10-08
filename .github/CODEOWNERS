@@ -4,9 +4,10 @@
 # repository. On 2026-10-08 the GitHub API reported @mattiaciuni as an
 # organization administrator with admin (push) rights here.
 #
-# No organization teams exist yet. Do not add team slugs to this file until the
-# teams exist on GitHub: CODEOWNERS entries that GitHub cannot resolve are
-# silently ineffective, which is worse than having no rule at all.
+# A private "Engineering" team (slug `engineering`) exists as of 2026-10-08
+# with @mattiaciuni as its only member. Team slugs are deliberately left out
+# of this file: the default is a named human, not a group whose membership can
+# change without a review.
 #
 # Review rules only apply if the repository's branch protection requires
 # CODEOWNERS review (Settings > Branches). See docs/SECURITY_BASELINE.md.
