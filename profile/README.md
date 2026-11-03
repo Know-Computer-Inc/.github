@@ -1,4 +1,3 @@
-![Know Computer](https://raw.githubusercontent.com/Know-Computer-Inc/.github/main/profile/assets/know-banner.svg)
 
 # Know Computer
 
